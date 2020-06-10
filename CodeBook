@@ -1,0 +1,38 @@
+GitHub contains a code book that modifies and updates the available codebooks with the data to indicate all the variables and summaries calculated, along with units, and any other relevant information.
+
+Step 1: Download datasets into "UCI Har Dataset" into working directory
+Step 2: Assign each datset to variables
+
+activities = "activity_labels.txt" #contains list of activities 
+features = "features.txt" #labels for data
+X_test = "X_test.txt"
+y_test = "y_test.txt"
+subject_test = "subject_test.txt"
+X_train = "X_train.txt"
+y_train = "y_train.txt"
+subject_train = "subject_train.txt"
+
+Step 3: Join datasets
+
+Row bind:
+X = X_test,X_train
+Y = y_test, y_train
+subject = subject_test,subject_train
+
+Column bind: subject, Y, X
+
+Step 4: To get the tidy dataset, select only the subject, code and mean/std of each measurement
+
+Step 5: Label all column names better
+
+Acc -> Accelerometer
+Gyro -> Gyroscope
+Freq -> Frequency
+BodyBody -> Body
+Mag -> Magnitude
+t -> Time
+f -> Frequency
+angle -> Angle
+gravity -> Gravity
+
+Step 6: the final dataset should have means of each subject and activity. "FinalData.txt" file exported onto GitHub.
